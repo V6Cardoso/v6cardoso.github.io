@@ -9,9 +9,6 @@
     </head>
     <body>
         <h1>Página principal</h1>
-        <input type="radio" name="radio1" onclick="handleClick(this.id);" id="customerId" />
-        <input type="radio" name="radio1" onclick="handleClick(this.id);" id="companyId" />
-        <p id="valor">valor: </p>
-
+        <h2>index</h2>
     </body>
 </html>
