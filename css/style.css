@@ -1,0 +1,19 @@
+body {
+    border-radius: 0.5%;
+    border-color: white;
+    border-width: 8px;
+    border-style: solid;
+    background-color: gray;
+}
+
+header {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: auto;
+    width: 150px;
+}
+
+.menu-item:hover {
+    background-color: lightgrey;
+    color: black;
+}
