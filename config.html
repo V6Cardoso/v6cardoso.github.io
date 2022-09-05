@@ -22,17 +22,41 @@
     </div>
 
     <div class="box row d-flex justify-content-center">
+      <div class="text-center">
+        <h2>Configurações</h2>
+      </div>
+
+      <div class="form">
+        <div class="d-flex">
+          <p class="config-spacing">Dark Mode</p>
+          <label class="switch">
+            <input type="checkbox">
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <br>
+        <div class="d-flex">
+          <p class="config-spacing">Spotify</p>
+          <input class="input spotify-input botton-border" type="text" placeholder="Usuário">
+          <div class="config-spacing"></div>
+          <input class="input spotify-input botton-border" type="password" placeholder="senha">
+        </div>
+        <br>
+        <div class="d-flex">
+          <p class="config-spacing">Idioma</p>
+          <div>
+            <select class="custom-select botton-border" id="inputGroupSelect01">
+              <option selected value="1">Português</option>
+              <option value="2" disabled>English (work in progress)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      
+
       <div class="col-md-12 text-center">
-        <img src="img/fellowship.png">
-      </div>
-      <div class="text-center">
-        <h2>Qual será a aventura de hoje?</h2>
-      </div>
-      <div class="text-center">
-        <input id="search-input" class="input botton-border" type="text" placeholder="Digite a aventura aqui">
-      </div>
-      <div class="text-center">
-        <button id="search-button">Confirmar</button>
+        <button id="config-confirm-button">Confirmar</button>
+        <button id="config-restore-button">Restaurar</button>
       </div>
     </div>
 
