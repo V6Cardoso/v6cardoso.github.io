@@ -30,7 +30,6 @@ header {
 
 
 .box {
-    background-color: lightyellow;
     box-sizing: border-box;
 
     position:relative;
@@ -66,13 +65,6 @@ footer {
 .spotify-input {
     width: 300px;
     height: 30px;
-    padding-left: px;
-}
-
-#inputGroupSelect01 {
-    background-color: lightgray;
-    border-radius: 3px;
-    border-color: black;
 }
 
 .botton-border {
@@ -83,6 +75,22 @@ footer {
 
 .config-spacing {
     padding-right: 20px;
+}
+
+.img-collection {
+    border-radius: 8px;
+    border: 5px solid gray;
+    border-color: gray;
+    padding: 0px;
+    margin: 14px;
+    width: auto;
+    height: 150px;
+}
+
+#inputGroupSelect01 {
+    background-color: lightgray;
+    border-radius: 3px;
+    border-color: black;
 }
 
 #config-confirm-button {
