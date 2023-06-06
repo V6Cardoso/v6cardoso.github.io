@@ -2,4 +2,4 @@
 
 Meu website.
 
-https://me.victorcardoso.dev.br
+https://victorcardoso.dev.br
