@@ -1,49 +1,43 @@
-const textoBase = '\n';
-const texto = ['Você chegou aqui muito cedo', 'Página em construção...'];
-let textoFinal = "";
-
-const typingvel = 100;
-const erasingvel = 30;
-let textoIndex = 0;
-let charTextoIndex = 0;
-let charTextoBaseIndex = 0;
-
-
-
-function digitar() {
-    if(charTextoBaseIndex < textoBase.length) {
-        textoFinal += textoBase.charAt(charTextoBaseIndex)
-        document.getElementById("titulo").innerHTML = textoFinal;
-        charTextoBaseIndex++;
-        setTimeout(digitar, typingvel + (Math.random() * 100));
-    }
-    else if(textoIndex < texto.length) {
-        if(charTextoIndex < texto[textoIndex].length) {
-            textoFinal += texto[textoIndex].charAt(charTextoIndex)
-            document.getElementById("titulo").innerHTML = textoFinal;
-            charTextoIndex++;
-            setTimeout(digitar, typingvel + (Math.random() * 40));
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('show');
+        } else {
+            entry.target.classList.remove('show');
         }
-        else if(textoIndex == 0) {
-            textoIndex++;
-            charTextoIndex = 0;
-            setTimeout(apagar, 2000);
-        }
-    }
-    
-}
+    })
+});
 
-function apagar() {
-    if(textoFinal > textoBase) {
-        textoFinal = textoFinal.substring(0, textoFinal.length - 1)
-        document.getElementById("titulo").innerHTML = textoFinal;
-        setTimeout(apagar, erasingvel);
-    }
-    else {
-        setTimeout(digitar, 500);
+const observerOnce = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if(entry.isIntersecting) {
+            entry.target.classList.add('show');
+        }
+    })
+});
+
+let hiddenElements = document.querySelectorAll('.hidden');
+let hiddenOnceElements = document.querySelectorAll('.hiddenOnce');
+
+//scroll behavior
+let topButton = document.querySelector('.top-button');
+let intro = document.querySelector('.intro');
+let navTitle = document.querySelector('.nav-title');
+let navImage = document.querySelector('.nav-image');
+
+const scrollBehavior = () => {
+    if (window.scrollY > (intro.clientHeight / 2) - 50) {
+        navTitle.hidden = false;
+        topButton.hidden = false;
+        navImage.hidden = true;
+    } else {
+        navTitle.hidden = true;
+        topButton.hidden = true;
+        navImage.hidden = false;
     }
 }
+window.addEventListener('load', scrollBehavior)
+document.addEventListener('scroll', scrollBehavior)
 
-document.addEventListener('DOMContentLoaded', function() {
-    setTimeout(digitar, 500);
-})
+hiddenElements.forEach(el => observer.observe(el));
+hiddenOnceElements.forEach(el => observerOnce.observe(el));
