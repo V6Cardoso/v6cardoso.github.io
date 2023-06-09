@@ -202,7 +202,9 @@ header, section {
 
 
 @media (max-width: 760px) {
-	
+	.intro-image {
+		background-size:cover;
+	}
 }
 
 
