@@ -368,7 +368,7 @@ footer {
   transition: all 1.5s;
 }
 
-#sobre .hiddenOnce, #projetos .hiddenOnce {
+#sobre .hiddenOnce, #prateleira .hiddenOnce {
 	transform: none;
 	transition: all 2s;
 }
